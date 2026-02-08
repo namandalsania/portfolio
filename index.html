@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND_TERM | Naman Dalsania</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="terminal-container">
+        <!-- Top Bar: Indices -->
+        <header class="top-bar">
+            <div class="logo">ND_TERMINAL <span class="blink">_</span></div>
+            <div class="market-indices">
+                <span class="index">S&P 500 <span class="up">4,120.50 ▲ 0.8%</span></span>
+                <span class="index">NASDAQ <span class="down">12,200.10 ▼ 0.2%</span></span>
+                <span class="index">DOW <span class="up">33,400.20 ▲ 0.5%</span></span>
+                <span class="index separator">|</span>
+                <span class="index">US 10Y <span class="neutral">3.5%</span></span>
+            </div>
+            <div class="clock" id="clock">00:00:00</div>
+        </header>
+
+        <!-- Ticker Tape -->
+        <div class="ticker-wrap">
+            <div class="ticker" id="skill-ticker">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <main class="grid-layout">
+            <div id="screen-1" class="screen active">
+                <!-- Left Column: Profile + Projects -->
+                <div class="col-left">
+                    <section class="window profile-window" id="win-profile">
+                        <div class="window-header">
+                            <span class="window-title">>> SECURITY DESCRIPTION: NAMAN DALSANIA</span>
+                            <div class="window-controls">
+                                <span class="btn-min">[_]</span>
+                                <span class="btn-max">[□]</span>
+                                <span class="btn-close">[X]</span>
+                            </div>
+                        </div>
+                        <div class="window-content" id="profile-content">
+                            <!-- JS populated -->
+                        </div>
+                    </section>
+
+                    <section class="window projects-window" id="win-projects">
+                        <div class="window-header">
+                            <span class="window-title">>> FINANCIAL ANALYSIS (PROJECTS)</span>
+                            <div class="window-controls">
+                                <span class="btn-min">[_]</span>
+                                <span class="btn-max">[□]</span>
+                                <span class="btn-close">[X]</span>
+                            </div>
+                        </div>
+                        <div class="window-content scrollable" id="projects-content">
+                            <!-- JS populated -->
+                        </div>
+                    </section>
+
+                    <section class="window responsibilities-window" id="win-responsibilities">
+                        <div class="window-header">
+                            <span class="window-title">>> LEADERSHIP (RESPONSIBILITIES)</span>
+                            <div class="window-controls">
+                                <span class="btn-min">[_]</span>
+                                <span class="btn-max">[□]</span>
+                                <span class="btn-close">[X]</span>
+                            </div>
+                        </div>
+                        <div class="window-content scrollable" id="responsibilities-content">
+                            <!-- JS populated -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Experience -->
+                <div class="col-right">
+                    <section class="window news-window" id="win-experience">
+                        <div class="window-header">
+                            <span class="window-title">>> CORPORATE ACTIONS (EXPERIENCE)</span>
+                            <div class="window-controls">
+                                <span class="btn-min">[_]</span>
+                                <span class="btn-max">[□]</span>
+                                <span class="btn-close">[X]</span>
+                            </div>
+                        </div>
+                        <div class="window-content scrollable" id="experience-content">
+                            <!-- JS populated -->
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer / Command Line -->
+        <footer class="command-line">
+            <span class="prompt">USER@ND_TERM:~$</span>
+            <input type="text" class="cmd-input"
+                placeholder="Type 'help' to see commands, or 'theme retro' to switch style..." autofocus>
+            <!-- Removed Pagination Controls -->
+            <div class="footer-links" id="footer-links">
+                <!-- JS populated -->
+            </div>
+        </footer>
+    </div>
+
+    <script src="resume_data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
