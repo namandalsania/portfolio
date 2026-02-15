@@ -519,22 +519,95 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Layout Stacking */
     .grid-layout {
-        padding: 5px;
+        padding: 10px 5px 60px 5px; /* Adjust padding */
     }
 
     .screen {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        display: block;
-        overflow-y: auto;
+        flex-direction: column;
+        display: flex;
+        overflow-y: visible; /* Let body handle scroll */
+        height: auto;
+    }
+
+    .col-left, .col-right {
+        flex: none;
+        width: 100%;
     }
 
     .window {
-        min-height: 400px;
-        margin-bottom: 10px;
+        min-height: auto; /* Let content dictate height, or small min-height */
+        margin-bottom: 15px;
+        flex: none; /* Don't expand to fill height weirdly */
     }
 
+    /* Top Bar Scrolling */
+    .top-bar {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start; /* Align left to allow scrolling */
+    }
+    
+    .top-bar::-webkit-scrollbar {
+        height: 2px; /* Tiny scrollbar for indicators */
+    }
+
+    .logo {
+        margin-right: 15px;
+        flex-shrink: 0; /* Keep logo visible */
+    }
+
+    .clock {
+        display: none; /* Hide clock on mobile to save space, or move it */
+    }
+
+    .market-indices {
+        flex-grow: 1;
+        gap: 15px;
+        padding-right: 10px;
+    }
+
+    /* Ticker */
+    .ticker-wrap {
+        top: 0; /* Adjust if Top Bar moves ? No, Top Bar is sticky */
+    }
+
+    /* Touch Targets */
+    .window-controls span {
+        padding: 8px 8px; /* Bigger hit area */
+        margin-left: 2px;
+        font-size: 1.1rem;
+    }
+    
+    .window-header {
+        height: 50px; /* Taller header for fingers */
+    }
+
+    /* Maximize Behavior on Mobile */
+    .window.maximized {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        margin: 0;
+        border-radius: 0;
+        height: 100% !important;
+        position: fixed;
+    }
+
+    /* Input text size to prevent iOS zoom */
+    .cmd-input {
+        font-size: 16px; 
+    }
+    
+    .footer-links {
+        display: none; /* Hide links on mobile if too crowded, or stack them? Let's hide to clean up UI */
+    }
+    
+    /* Ensure body scrolls */
     body {
         overflow-y: auto;
     }
