@@ -129,6 +129,11 @@ function renderProfile() {
                 </div>
             </div>
         </div>
+        
+        <div class="divider"></div>
+        <div style="margin-top: 15px;">
+            <a href="Resume.pdf" target="_blank" class="download-btn" style="width: 100%; display: block; text-align: center;">[ DOWNLOAD RESUME_PDF ]</a>
+        </div>
     `;
 }
 
@@ -219,7 +224,6 @@ function renderFooter() {
         <a href="https://${c.linkedin}" target="_blank">LINKEDIN</a>
         <a href="https://${c.github}" target="_blank">GITHUB</a>
         <a href="mailto:${c.email}">EMAIL</a>
-        <a href="resume.pdf" target="_blank" style="color: var(--text-primary); margin-left:15px; font-weight: bold;">[DOWNLOAD RESUME]</a>
     `;
 }
 
@@ -244,6 +248,8 @@ function initCommandLine() {
                 window.open(`https://${resumeData.profile.contact.github}`, '_blank');
             } else if (cmd === 'email') {
                 window.location.href = `mailto:${resumeData.profile.contact.email}`;
+            } else if (cmd === 'resume') {
+                window.open('Resume.pdf', '_blank');
             } else if (cmd.startsWith('maximize ')) {
                 const target = cmd.split(' ')[1];
                 maximizeWindow(target);
