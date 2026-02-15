@@ -132,7 +132,7 @@ function renderProfile() {
         
         <div class="divider"></div>
         <div style="margin-top: 15px;">
-            <a href="Resume.pdf" target="_blank" class="download-btn" style="width: 100%; display: block; text-align: center;">[ DOWNLOAD RESUME_PDF ]</a>
+            <a href="Resume.pdf?v=${new Date().getTime()}" target="_blank" class="download-btn" style="width: 100%; display: block; text-align: center;">[ DOWNLOAD RESUME_PDF ]</a>
         </div>
     `;
 }
@@ -249,7 +249,7 @@ function initCommandLine() {
             } else if (cmd === 'email') {
                 window.location.href = `mailto:${resumeData.profile.contact.email}`;
             } else if (cmd === 'resume') {
-                window.open('Resume.pdf', '_blank');
+                window.open('Resume.pdf?v=' + new Date().getTime(), '_blank');
             } else if (cmd.startsWith('maximize ')) {
                 const target = cmd.split(' ')[1];
                 maximizeWindow(target);
